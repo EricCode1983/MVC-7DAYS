@@ -1,0 +1,25 @@
+﻿@using Test1.ViewModel
+@model  EmployeeListViewModel
+@{
+    ViewBag.Title = "MyView";
+   
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ Hello @Model.UserName
+<hr />
+<div>
+    <table style="border:black 1px solid">
+        <tr style="border:black 1px">
+            <th>Employee Name</th>
+            <th>Salary</th>
+        </tr>
+        @foreach (EmployeeViewModel item in Model.Employees)
+        {
+            <tr style="border:black 1px">
+                <td style="border:black 1px">@item.EmployeeName</td>
+                <td style="background-color:@item.SalaryColor;border:black 1px">@item.Salary</td>
+            </tr>
+        }
+    </table>
+</div>
+
